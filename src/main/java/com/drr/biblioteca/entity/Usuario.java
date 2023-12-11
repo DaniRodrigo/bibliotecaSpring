@@ -2,18 +2,24 @@ package com.drr.biblioteca.entity;
 
 import com.drr.biblioteca.enumeraciones.Rol;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 public class Usuario {
 
     @Id
-    @GeneratedValue(generator = "uuid")
-    @GenericGenerator(name = "uuid", strategy = "hibernate-uuid")
-    private String id;
+    @GeneratedValue(strategy = GenerationType.AUTO)  //Da un valor autogenerado
+    private Integer id;
 
+    @NotBlank(message = "El nombre no puede ser nulo ni estar vacío")
     private String nombre;
+    @NotBlank(message = "El email no puede ser nulo ni estar vacío")
+    @Email(message = "El email debe contener un email real")
     private String email;
+
+    @NotBlank(message = "La contraseña no puede ser nula ni estar vacía")
     private String password;
 
     @Enumerated(EnumType.STRING)
@@ -22,11 +28,11 @@ public class Usuario {
     public Usuario() {
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

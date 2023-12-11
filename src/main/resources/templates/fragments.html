@@ -1,5 +1,6 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:fragment="head">
   <meta charset="UTF-8">
   <meta name="viewport"
@@ -64,6 +65,12 @@
           </ul>
         </li>
       </ul>
+
+      <a class="nav-link active btn btn-outline-warning mx-2" aria-current="page"  th:href="@{/login}">login</a>
+      <a class="nav-link active btn btn-outline-primary" aria-current="page"  th:href="@{/registrar}">registrar</a>
+      <a sec:authorize="isAuthenticated()" class="nav-link active btn btn-outline-danger mx-2" aria-current="page"  th:href="@{/logout}">logout</a>
+
+
     </div>
   </nav>
 </section>
