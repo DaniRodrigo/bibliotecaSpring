@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+<section th:fragment="navBar">
+  <nav class="navbar navbar-expand-lg navBar">
+    <div class="containerImg">
+      <a href="/" class="navbar-brand d-flex align-items-center">
+        <img class="logo" th:src="@{/DaniR.jpg}" alt="Img DaniR" style="width:40px">
+      </a>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse elementosNav" id="navbarNavDropdown">
+      <ul class="navbar-nav ms-auto elementos">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownLibros" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Libros
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+            <li><a class="dropdown-item" th:href="@{/libro/registrar}">Crear Libro</a></li>
+            <li><hr class="dropdown-divider"></li>
+
+            <li><a class="dropdown-item" th:href="@{/libro/lista}">Listar Libros</a></li>
+          </ul>
+        </li>
+
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="" id="navbarDropdownAutores" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Autores
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+            <li><a class="dropdown-item" th:href="@{/autor/registrar}">Crear Autor</a></li>
+            <li><hr class="dropdown-divider"></li>
+
+            <li><a class="dropdown-item" th:href="@{/autor/lista}">Listar Autores</a></li>
+          </ul>
+        </li>
+
+
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownEditorial" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Editoriales
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+            <li><a class="dropdown-item" th:href="@{/editorial/registrar}">Crear Editorial</a></li>
+            <li><hr class="dropdown-divider"></li>
+
+            <li><a class="dropdown-item" th:href="@{/editorial/lista}">Listar Editoriales</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</section>
+
+</body>
+</html>
