@@ -13,4 +13,14 @@ public class PortalControler {
 
         return "index.html";  //Devolverá ésta vista
     }
+
+    @GetMapping("/registrar")
+    public String registrar(){
+        return "registro.html";
+    }
+
+    @GetMapping("/login")
+    public String login(){
+        return "login.html";
+    }
 }
